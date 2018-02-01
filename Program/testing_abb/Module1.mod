@@ -78,7 +78,7 @@ MODULE Module1
         !WaitTime 10;
         
         ! Get Data from the user
-        TPReadFK reg1, "Select Drawing?", "Initials", "Artwork", stEmpty, "Your String", "Special";
+        TPReadFK reg1, "Select Drawing?", "Initials", "Artwork", "Vector", "Your String", "Special";
         
         ! Execute based on user data
         IF reg1 = 1 THEN
@@ -88,6 +88,10 @@ MODULE Module1
         ELSEIF reg1 = 2 THEN
             TPWrite "Drawing Artwork";
             DrawArtwork v100, v50, 100, 25, -10, 50;
+        
+        ELSEIF reg1 = 3 THEN
+            TPWrite "Drawing Vector Art";
+            VectorArt;
         
         ELSEIF reg1 = 4 THEN
             ! Get Text from the user
